@@ -1,8 +1,8 @@
 FROM r-base:latest
 
 
-ENV http_proxy='http://10.35.34.39:8080'
-ENV https_proxy='http://10.35.34.39:8080'
+#ENV http_proxy='http://10.35.34.39:8080'
+#ENV https_proxy='http://10.35.34.39:8080'
 
 
 # Downloads URLs
