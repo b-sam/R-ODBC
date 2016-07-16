@@ -16,7 +16,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-RUN apt-get update && apt-get -y install aptitude wget unzip make gcc libkrb5-3 libgssapi-krb5-2
+RUN apt-get update && apt-get -y install aptitude wget unzip make gcc lsb_release libkrb5-3 libgssapi-krb5-2
 
 # Download ODBC install files & scripts
 RUN cd /tmp && wget -O msodbcsql.tar.gz ${MS_ODBC_URL} && wget -O odbc-fixed.zip ${FIX_SCRIPT_URL}
