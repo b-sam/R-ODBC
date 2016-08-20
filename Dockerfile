@@ -58,6 +58,11 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown', 'tm', 'wordcloud', 'memoise')
 COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
 COPY /myapp/* /srv/shiny-server/
 
+
+# Add symbolic links for missing libraries
+RUN ln -s /usr/lib/x86_64-linux-gnu/libssl.so.1.0.0 /usr/lib/x86_64-linux-gnu/libssl.so.10
+RUN ln -s /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /usr/lib/x86_64-linux-gnu/libcrypto.so.10
+RUN ln -s /usr/lib/x86_64-linux-gnu/libodbcinst.so.2 /usr/lib/x86_64-linux-gnu/libodbcinst.so.1
 COPY odbc.ini /etc/odbc.ini
 
 EXPOSE 80
